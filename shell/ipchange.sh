@@ -8,6 +8,5 @@ then
   echo "`date -u` not changed"
 else
   echo $IPADDRESS > ip.txt
-  curl -s http://semidream.com:10001/?text=${IPADDRESS}&to=oregami@163.com > /dev/null 2>&1
+  curl -s http://semidream.com:10001/?text=${IPADDRESS}&to=oregami@163.com
 fi
-
