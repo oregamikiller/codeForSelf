@@ -1,7 +1,7 @@
 #!/bin/sh
 
 
-GITREPOPATH='/Users/oregami/oregamikiller.github.io'
+GITREPOPATH='/Users/oregami/repos/oregamikiller.github.io'
 
 GITCOMMOND=`which git`
 
