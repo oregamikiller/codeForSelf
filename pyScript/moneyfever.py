@@ -18,7 +18,7 @@ def getback(d=Device()):
     d.press.back()
     d.press.home()
 
-def moneyrun(device=""):
+def moneyrun(device=None):
     print "start...."
     d = Device('1ebf31e4')
     time.sleep(2)
@@ -53,9 +53,9 @@ def moneyrun(device=""):
     # getback(d)
     return 1
 
-def jingdongFinance(device=""):
+def jingdongFinance(device=None):
     print "start...."
-    d = Device('1ebf31e4')
+    d = Device()
     time.sleep(2)
     while d.screen == "off":
         print "off"
@@ -63,56 +63,35 @@ def jingdongFinance(device=""):
         time.sleep(2)
         d.swipe(200, 500, 200, 100, steps=10)
         time.sleep(2)
-    print d.info
-    # d.swipe(200, 500, 200, 100, steps=10)
-    # d.press.home()
-    # time.sleep(1)
-    # d.swipe(200, 800, 650, 800, steps=10)
-    # time.sleep(1)
     while not d(text=u'京东金融').exists:
         d.press.home()
-        time.sleep(1)
-        # d.swipe(200, 800, 650, 800, steps=10)
-        time.sleep(1)
+        time.sleep(2)
         print u'京东金融不存在'
     d(text=u'京东金融').click()
     time.sleep(15)
-    print d.dump()
-    # d.swipe(200, 600, 550, 600, steps=100)
     if d(text=u'立即登录体验').exists:
         d(text=u'立即登录体验').click()
         time.sleep(5)
-        print d.dump()
-
     if d(text=u'用其他账号登录').exists:
         d(text=u'用其他账号登录').click()
         time.sleep(5)
-        print d.dump()
     if d(text=u'手机京东一键登录').exists:
         d(text=u'手机京东一键登录').click()
         time.sleep(10)
-        print d.dump()
         d.click(350, 800)
     time.sleep(10)
-    print d.dump()
     if d(text=u'白条可用额度').exists:
         d(text=u'白条可用额度').click()
         time.sleep(10)
-        print d.dump()
     if d(text=u'1个提额包').exists:
         d(text=u'1个提额包').click()
         time.sleep(10)
-        print d.dump()
     time.sleep(10)
     d.click(600, 1200)
     time.sleep(4)
-    print d.dump()
-
     if d(description=u'领取').exists:
         d(description=u'领取').click()
         time.sleep(10)
-        print d.dump()
-    # getback(d)
     return 1
 
 #moneyrun()
