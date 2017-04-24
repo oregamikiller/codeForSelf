@@ -25,9 +25,9 @@ def moneyrun(device=None):
     while d.screen == "off":
         print "off"
         d.screen.on()
-        time.sleep(2)
+        time.sleep(4)
         d.swipe(300, 1000, 300, 400, steps=10)
-        time.sleep(2)
+        time.sleep(4)
     print d.info
     # d.swipe(200, 500, 200, 100, steps=10)
     # d.press.home()
@@ -37,20 +37,24 @@ def moneyrun(device=None):
     while not d(text=u'手机京东').exists:
         d.press.home()
         time.sleep(1)
-        # d.swipe(200, 800, 650, 800, steps=10)
+        d.swipe(300, 1000, 300, 400, steps=10)
         time.sleep(1)
         print u'手机京东不存在'
     d(text=u'手机京东').click()
-    time.sleep(3)
+    time.sleep(4)
     # d.swipe(200, 600, 550, 600, steps=100)
     if d(text=u'领京豆').exists:
         d(text=u'领京豆').click()
-        time.sleep(3)
+        time.sleep(6)
         print d.dump()
-        d.click(625, 260)
+        d.click(650, 260)
+        time.sleep(4)
+        d.click(530, 660)
+        time.sleep(4)
+        d.click(360, 960)
 
     time.sleep(4)
-    # getback(d)
+    getback(d)
     return 1
 
 def jingdongFinance(device=None):
@@ -88,13 +92,14 @@ def jingdongFinance(device=None):
         time.sleep(10)
     time.sleep(10)
     d.click(600, 1200)
-    time.sleep(4)
-    if d(description=u'领取').exists:
-        d(description=u'领取').click()
-        time.sleep(10)
+    time.sleep(8)
+    d.click(630, 450)
+    time.sleep(8)
+    getback(d)
     return 1
 
-moneyrun()
+# moneyrun()
+jingdongFinance()
 
 #jingdongFinance()
 # try:
