@@ -26,7 +26,7 @@ def moneyrun(device=None):
         print "off"
         d.screen.on()
         time.sleep(2)
-        d.swipe(200, 500, 200, 100, steps=10)
+        d.swipe(300, 1000, 300, 400, steps=10)
         time.sleep(2)
     print d.info
     # d.swipe(200, 500, 200, 100, steps=10)
@@ -94,9 +94,9 @@ def jingdongFinance(device=None):
         time.sleep(10)
     return 1
 
-#moneyrun()
+moneyrun()
 
-jingdongFinance()
+#jingdongFinance()
 # try:
 #     while True:
 #         moneyrun()
